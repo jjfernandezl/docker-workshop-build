@@ -1,0 +1,15 @@
+FROM node:20.19.5-alpine3.22
+
+WORKDIR /usr/src/app
+
+# Copy all files
+COPY . .
+
+RUN npm install && \
+npm cache clean --force
+
+# Expose the port that the application listens on.
+EXPOSE 5000
+
+# Run the application.
+CMD ["node", "index.js"]

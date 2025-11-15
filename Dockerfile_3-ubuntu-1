@@ -1,0 +1,21 @@
+FROM ubuntu:22.04
+
+WORKDIR /usr/src/app
+
+# Updates apt cache
+RUN apt-get update
+
+# Installs Node.js from Ubuntu repo
+RUN apt-get install -y nodejs npm
+
+# Installs app dependencies
+COPY . .
+RUN npm install
+
+RUN apt-get autoremove --purge -y npm
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
+
+EXPOSE 5000
+
+CMD ["node", "index.js"]
