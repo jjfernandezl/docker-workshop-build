@@ -1,6 +1,8 @@
-# Commands help file
+# Commands help file (_Work in progress_)
 
-This file provides a list of commands that will be used during the workshop, so they can be copied in the terminal if needed
+This file provides a list of commands that will be used during the workshop, so they can be copied in the terminal if needed.
+
+
 
 ## Previous steps
 
@@ -13,4 +15,3 @@ docker pull node
 docker pull node:20.19.5-alpine3.22
 docker pull ubuntu:22.04
 ```
-
