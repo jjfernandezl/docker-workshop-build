@@ -1,5 +1,5 @@
 # Stage 1: Build dependencies. Using dev variant
-FROM docker/dhi-node:20.19.5-alpine3.22-dev AS build
+FROM dhi.io/node:20.19.5-alpine3.22-dev AS build
 
 
 WORKDIR /usr/src/app
@@ -15,7 +15,7 @@ npm cache clean --force
 COPY . .
 
 # Stage 2: Production stage. No dev variant, no package manager
-FROM docker/dhi-node:20.19.5-alpine3.22 AS production
+FROM dhi.io/node:20.19.5-alpine3.22 AS production
 
 WORKDIR /usr/src/app
 
